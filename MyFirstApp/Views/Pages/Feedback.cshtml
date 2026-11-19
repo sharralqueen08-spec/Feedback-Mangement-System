@@ -1,0 +1,468 @@
+﻿
+@{
+    ViewData["Title"] = "Student Feedback Form";
+}
+
+<div class="feedback-wrapper">
+
+    <!-- Header -->
+    <div class="feedback-header">
+        <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="rounded-3 d-flex align-items-center justify-content-center"
+                 style="width:48px;height:48px;background:var(--aqua);color:var(--dark-green);">
+                <i class="bi bi-chat-square-text-fill fs-4"></i>
+            </div>
+
+            <div>
+                <div class="small text-uppercase fw-semibold"
+                     style="letter-spacing:2px;color:var(--aqua);">
+                    ABC ACADEMY
+                </div>
+                <div class="small text-white-50">Student Experience</div>
+            </div>
+        </div>
+
+        <h2>Student Feedback Form</h2>
+
+        <p>
+            Your feedback matters! Help us improve our teaching quality,
+            learning experience, and student support services.
+        </p>
+    </div>
+
+    <div class="feedback-body">
+
+        <form method="post" asp-controller="Feedback" asp-action="Submit">
+            @Html.AntiForgeryToken()
+
+            <!-- Student Information -->
+            <div class="mb-4">
+                <h5 class="section-title">
+                    <i class="bi bi-person-vcard me-2"></i>
+                    Student Information
+                </h5>
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label for="studentName" class="form-label">
+                            Student Name <span class="required-mark">*</span>
+                        </label>
+                        <input type="text" class="form-control"
+                               id="studentName" name="StudentName"
+                               placeholder="Enter your full name" required />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="studentId" class="form-label">
+                            Student ID
+                        </label>
+                        <input type="text" class="form-control"
+                               id="studentId" name="StudentId"
+                               placeholder="Enter your student ID" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="month" class="form-label">
+                            Month <span class="required-mark">*</span>
+                        </label>
+                        <select class="form-select" id="month" name="Month" required>
+                            <option value="">Select month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="faculty" class="form-label">
+                            Faculty &amp; Batch <span class="required-mark">*</span>
+                        </label>
+                        <input type="text" class="form-control"
+                               id="faculty" name="FacultyBatch"
+                               placeholder="Enter faculty and batch" required />
+                    </div>
+
+                    <div class="col-12">
+                        <label for="subject" class="form-label">
+                            Subject / Course <span class="required-mark">*</span>
+                        </label>
+                        <input type="text" class="form-control"
+                               id="subject" name="Subject"
+                               placeholder="Enter subject or course name" required />
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <!-- Feedback Questions -->
+            <h5 class="section-title">
+                <i class="bi bi-clipboard-check me-2"></i>
+                Faculty &amp; Learning Feedback
+            </h5>
+
+            <div class="row g-3">
+
+                <!-- Question 1 -->
+                <div class="col-md-6">
+                    <div class="question-card">
+                        <div class="d-flex gap-3 align-items-start mb-3">
+                            <span class="question-number">01</span>
+                            <h6 class="question-title">
+                                Punctuality: Do classes start and end on time?
+                                <span class="required-mark">*</span>
+                            </h6>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="punctuality1" name="Punctuality"
+                                   value="Every Class" required />
+                            <label class="form-check-label" for="punctuality1">Every class</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="punctuality2" name="Punctuality"
+                                   value="Most Classes" />
+                            <label class="form-check-label" for="punctuality2">Most of the classes</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="punctuality3" name="Punctuality"
+                                   value="Rarely" />
+                            <label class="form-check-label" for="punctuality3">Rarely</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="punctuality4" name="Punctuality"
+                                   value="Never" />
+                            <label class="form-check-label" for="punctuality4">Never</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="col-md-6">
+                    <div class="question-card">
+                        <div class="d-flex gap-3 align-items-start mb-3">
+                            <span class="question-number">02</span>
+                            <h6 class="question-title">
+                                Course Coverage: Has the faculty covered all topics?
+                                <span class="required-mark">*</span>
+                            </h6>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="coverage1" name="CourseCoverage"
+                                   value="Yes" required />
+                            <label class="form-check-label" for="coverage1">Yes, all topics are covered</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="coverage2" name="CourseCoverage"
+                                   value="No" />
+                            <label class="form-check-label" for="coverage2">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="col-md-6">
+                    <div class="question-card">
+                        <div class="d-flex gap-3 align-items-start mb-3">
+                            <span class="question-number">03</span>
+                            <h6 class="question-title">
+                                Technical Support: Does the faculty guide you during lab exercises?
+                                <span class="required-mark">*</span>
+                            </h6>
+                        </div>
+
+                        <p class="question-hint">Select one option.</p>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="support1" name="TechnicalSupport"
+                                   value="Excellent" required />
+                            <label class="form-check-label" for="support1">Excellent</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="support2" name="TechnicalSupport"
+                                   value="Good" />
+                            <label class="form-check-label" for="support2">Good</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="support3" name="TechnicalSupport"
+                                   value="Average" />
+                            <label class="form-check-label" for="support3">Average</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="support4" name="TechnicalSupport"
+                                   value="Fair" />
+                            <label class="form-check-label" for="support4">Fair</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="col-md-6">
+                    <div class="question-card">
+                        <div class="d-flex gap-3 align-items-start mb-3">
+                            <span class="question-number">04</span>
+                            <h6 class="question-title">
+                                Clearing Doubts: Does the faculty explain concepts clearly and answer your questions?
+                                <span class="required-mark">*</span>
+                            </h6>
+                        </div>
+
+                        <p class="question-hint">Select one option.</p>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="doubts1" name="DoubtClearing"
+                                   value="Excellent" required />
+                            <label class="form-check-label" for="doubts1">Excellent</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="doubts2" name="DoubtClearing"
+                                   value="Good" />
+                            <label class="form-check-label" for="doubts2">Good</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="doubts3" name="DoubtClearing"
+                                   value="Average" />
+                            <label class="form-check-label" for="doubts3">Average</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="doubts4" name="DoubtClearing"
+                                   value="Fair" />
+                            <label class="form-check-label" for="doubts4">Fair</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="col-md-6">
+                    <div class="question-card">
+                        <div class="d-flex gap-3 align-items-start mb-3">
+                            <span class="question-number">05</span>
+                            <h6 class="question-title">
+                                Exams &amp; Assignments: Are exams and assignments conducted monthly with timely feedback?
+                                <span class="required-mark">*</span>
+                            </h6>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="exams1" name="ExamsAssignments"
+                                   value="Yes" required />
+                            <label class="form-check-label" for="exams1">Yes</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="exams2" name="ExamsAssignments"
+                                   value="No" />
+                            <label class="form-check-label" for="exams2">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="col-md-6">
+                    <div class="question-card">
+                        <div class="d-flex gap-3 align-items-start mb-3">
+                            <span class="question-number">06</span>
+                            <h6 class="question-title">
+                                Book Utilization: Are books utilized during class?
+                                <span class="required-mark">*</span>
+                            </h6>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="books1" name="BookUtilization"
+                                   value="Every Class" required />
+                            <label class="form-check-label" for="books1">Every class</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="books2" name="BookUtilization"
+                                   value="Most Classes" />
+                            <label class="form-check-label" for="books2">Most of the classes</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="books3" name="BookUtilization"
+                                   value="Rarely" />
+                            <label class="form-check-label" for="books3">Rarely</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="books4" name="BookUtilization"
+                                   value="Never" />
+                            <label class="form-check-label" for="books4">Never</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="col-md-6">
+                    <div class="question-card">
+                        <div class="d-flex gap-3 align-items-start mb-3">
+                            <span class="question-number">07</span>
+                            <h6 class="question-title">
+                                Student Appraisal: Are reports delivered to you or your guardian monthly via SMS?
+                                <span class="required-mark">*</span>
+                            </h6>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="appraisal1" name="StudentAppraisal"
+                                   value="Yes" required />
+                            <label class="form-check-label" for="appraisal1">Yes</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="appraisal2" name="StudentAppraisal"
+                                   value="No" />
+                            <label class="form-check-label" for="appraisal2">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="col-md-6">
+                    <div class="question-card">
+                        <div class="d-flex gap-3 align-items-start mb-3">
+                            <span class="question-number">08</span>
+                            <h6 class="question-title">
+                                Computer Uptime: Are computer/software issues resolved within a reasonable timeframe?
+                                <span class="required-mark">*</span>
+                            </h6>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="uptime1" name="ComputerUptime"
+                                   value="No Issues" required />
+                            <label class="form-check-label" for="uptime1">
+                                No issues with computer systems/software
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="uptime2" name="ComputerUptime"
+                                   value="Resolved Timely" />
+                            <label class="form-check-label" for="uptime2">
+                                Issues are resolved in reasonable time
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="uptime3" name="ComputerUptime"
+                                   value="Delayed" />
+                            <label class="form-check-label" for="uptime3">
+                                Issue resolution is delayed
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio"
+                                   id="uptime4" name="ComputerUptime"
+                                   value="Not Resolved" />
+                            <label class="form-check-label" for="uptime4">
+                                Issues are not resolved
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Remarks -->
+            <div class="remarks-card mt-4">
+                <div class="d-flex gap-3 align-items-start mb-3">
+                    <span class="question-number">
+                        <i class="bi bi-pencil-square"></i>
+                    </span>
+
+                    <div>
+                        <h6 class="question-title mb-1">
+                            Additional Remarks &amp; Suggestions
+                        </h6>
+                        <p class="question-hint mb-0">
+                            Share your suggestions to help us improve.
+                        </p>
+                    </div>
+                </div>
+
+                <label for="remarks" class="form-label">Your Feedback</label>
+
+                <textarea class="form-control"
+                          id="remarks"
+                          name="Remarks"
+                          rows="5"
+                          maxlength="2000"
+                          placeholder="Write your comments or suggestions here..."></textarea>
+            </div>
+
+            <!-- Buttons -->
+            <div class="feedback-footer mt-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+                <p class="footer-note mb-0">
+                    <i class="bi bi-shield-check me-1"></i>
+                    Thank you for helping us improve.
+                </p>
+
+                <div class="d-flex gap-2">
+                    <button type="reset" class="btn btn-reset">
+                        <i class="bi bi-arrow-counterclockwise me-1"></i>
+                        Reset
+                    </button>
+
+                    <button type="submit" class="btn btn-submit">
+                        Submit Feedback
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>

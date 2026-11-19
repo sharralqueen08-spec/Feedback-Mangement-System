@@ -1,0 +1,333 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+
+<div class="it-home">
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="bi bi-stars"></i>
+                    Learn Today. Lead Tomorrow.
+                </div>
+
+                <h1>
+                    Build Your Future<br />
+                    With <span>Technology.</span>
+                </h1>
+
+                <p>
+                    Turn your passion for technology into real-world skills.
+                    Learn programming, web development, cybersecurity and
+                    data science with practical, career-focused training.
+                </p>
+
+                <div class="hero-actions d-flex flex-wrap gap-3">
+                    <a href="#courses" class="btn-main">
+                        Explore Courses
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                    <a href="#teachers" class="btn-outline-light-custom">
+                        <i class="bi bi-people"></i>
+                        Quick Login / Signup
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FEATURED COURSES -->
+    <section class="courses-section section-padding" id="courses">
+        <div class="container">
+
+            <div class="text-center mb-5 reveal">
+                <span class="section-tag">What You Can Learn</span>
+
+                <h2 class="section-title">Explore Our Featured Courses</h2>
+
+                <p class="section-description">
+                    Develop in-demand IT skills with practical learning
+                    designed to help you grow, create and succeed in the
+                    digital world.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Web Development -->
+                <div class="col-sm-6 col-lg-3 reveal">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Learn to build modern, responsive websites and
+                            web applications using industry-relevant
+                            technologies.
+                        </p>
+
+                        <a href="#feedback" class="course-link">
+                            Learn More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Android Development -->
+                <div class="col-sm-6 col-lg-3 reveal">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-phone"></i>
+                        </div>
+
+                        <h3>Android Development</h3>
+
+                        <p>
+                            Discover mobile app development and learn how
+                            to create useful, engaging applications for
+                            smartphones.
+                        </p>
+
+                        <a href="#feedback" class="course-link">
+                            Learn More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cyber Security -->
+                <div class="col-sm-6 col-lg-3 reveal">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+
+                        <h3>Cyber Security</h3>
+
+                        <p>
+                            Understand digital security, network
+                            protection and the fundamentals of defending
+                            systems against cyber threats.
+                        </p>
+
+                        <a href="#feedback" class="course-link">
+                            Learn More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Data Science -->
+                <div class="col-sm-6 col-lg-3 reveal">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </div>
+
+                        <h3>Data Science</h3>
+
+                        <p>
+                            Explore data analysis, visualization,
+                            statistics and the foundations of
+                            data-driven decision-making.
+                        </p>
+
+                        <a href="#feedback" class="course-link">
+                            Learn More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FEEDBACK BANNER -->
+    <section class="section-padding" id="feedback">
+        <div class="container">
+            <div class="feedback-banner reveal">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span class="section-tag"
+                              style="background:rgba(255,255,255,.12);color:var(--aqua);">
+                            Your Voice Matters
+                        </span>
+
+                        <h2>Help Us Make Learning Better</h2>
+
+                        <p>
+                            Your feedback helps us improve our courses,
+                            teaching methods and learning experience.
+                            Share your thoughts and help us build a better
+                            learning community.
+                        </p>
+
+                        <!-- Change this URL to your actual feedback route -->
+                        <a asp-controller="Pages" asp-action="Feedback" class="feedback-btn">
+                            Share Your Feedback
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 text-lg-end d-none d-lg-block">
+                        <i class="bi bi-chat-square-heart"
+                           style="font-size:8rem;color:var(--aqua);opacity:.9;">
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- OUR TEACHERS -->
+    <section class="section-padding" id="teachers">
+        <div class="container">
+
+            <div class="text-center mb-5 reveal">
+                <span class="section-tag">Meet The Experts</span>
+
+                <h2 class="section-title">Learn From Our Teachers</h2>
+
+                <p class="section-description">
+                    Learn from dedicated technology educators who help
+                    students develop their knowledge, confidence and
+                    practical skills.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Teacher 1 -->
+                <div class="col-6 col-lg-3 reveal">
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&h=700&q=85"
+                                 alt="Web development instructor"
+                                 loading="lazy" />
+                        </div>
+
+                        <div class="teacher-info">
+                            <h3>Ahmed Khan</h3>
+                            <p>Web Development Instructor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 2 -->
+                <div class="col-6 col-lg-3 reveal">
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&h=700&q=85"
+                                 alt="Mobile app development instructor"
+                                 loading="lazy" />
+                        </div>
+
+                        <div class="teacher-info">
+                            <h3>Sarah Ahmed</h3>
+                            <p>Mobile App Instructor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 3 -->
+                <div class="col-6 col-lg-3 reveal">
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&h=700&q=85"
+                                 alt="Cybersecurity instructor"
+                                 loading="lazy" />
+                        </div>
+
+                        <div class="teacher-info">
+                            <h3>Usman Ali</h3>
+                            <p>Cyber Security Instructor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 4 -->
+                <div class="col-6 col-lg-3 reveal">
+                    <div class="teacher-card">
+                        <div class="teacher-image">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&h=700&q=85"
+                                 alt="Data science instructor"
+                                 loading="lazy" />
+                        </div>
+
+                        <div class="teacher-info">
+                            <h3>Ayesha Malik</h3>
+                            <p>Data Science Instructor</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- YOUTUBE VIDEO -->
+    <section class="video-section section-padding" id="about">
+        <div class="container">
+
+            <div class="text-center mb-5 reveal">
+                <span class="section-tag">Discover Our World</span>
+
+                <h2 class="section-title">Learn. Create. Innovate.</h2>
+
+                <p class="section-description">
+                    Explore the exciting world of computer science and
+                    discover how technology can transform ideas into reality.
+                </p>
+            </div>
+
+            <div class="video-wrap reveal">
+                <iframe class="video-frame"
+                        src="https://www.youtube-nocookie.com/embed/8mAITcNt710"
+                        title="Introduction to Computer Science - Harvard CS50"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".it-home .reveal");
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12
+            });
+
+            elements.forEach(function (element) {
+                observer.observe(element);
+            });
+        } else {
+            elements.forEach(function (element) {
+                element.classList.add("is-visible");
+            });
+        }
+    });
+</script>
